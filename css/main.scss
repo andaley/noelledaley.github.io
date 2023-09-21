@@ -15,14 +15,14 @@ body {
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 1000px;
   margin: $spacing-unit auto;
   padding: 0 0%;
 }
 
 a,
 a:visited {
-  border-bottom: 1px dotted #afafaf;
+  border-bottom: 1px dotted $border-color;
   text-decoration: none;
   color: $text-color;
 }
@@ -34,10 +34,7 @@ a:hover {
 
 .logo {
   font-family: $base-font-family;
-  font-weight: bold;
   text-align: center;
-  text-decoration: none;
-  a { color: $link-color; }
 }
 
 .site-nav {
@@ -61,21 +58,11 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .logo {
-    margin-top: 80px;
-  }
-
-  .site-nav {
-    left: 0;
-  }
-}
-
 .me {
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 auto 1em auto;
-  display: block;
+  height: 400px;
+  border-radius: 5%;
+  margin: 0 1.75em 0 0;
+  float: left;
 }
 
 .content {
@@ -87,4 +74,20 @@ a:hover {
 .date {
   font-size: $small-font-size;
   font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    margin-top: 80px;
+  }
+
+  .site-nav {
+    left: 0;
+  }
+
+  .me {
+    display: block;
+    float: none;
+    margin: 0 auto 1em auto;
+  }
 }

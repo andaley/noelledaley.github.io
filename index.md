@@ -1,10 +1,8 @@
 ---
-layout: default
+layout: about
 title: About
 permalink: /
 ---
-
-<img src="img/andaley.jpg" class="me" alt="Noelle Daley headshot">
 
 Hello! I'm Noelle, a staff software engineer residing in Portland, OR, where I spend my days leading a frontend engineering team at [HashiCorp](https://www.hashicorp.com/). I'm excited about thoughtful UX/UI design and get a thrill from the challenge of turning chaos into beautiful organization.
 
