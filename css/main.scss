@@ -1,11 +1,14 @@
 ---
 ---
 @charset "utf-8";
+@import "animations";
 @import "colors";
 @import "typography";
 @import "footer";
 @import "minima";
+@import "about";
 @import "resume";
+
 
 body {
   background: $background-color;
@@ -70,6 +73,10 @@ a:hover {
   margin-top: 50px;
   padding: 0 10%;
   line-height: $line-height;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;   
+  animation: fadeInSlideUp 0.4s ease forwards;
 }
 
 .date {

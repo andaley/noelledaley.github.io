@@ -1,0 +1,26 @@
+@import "animations";
+
+.container {
+  & > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  & > *:nth-child(1) {
+    animation: fadeInSlideUp 0.4s ease 0.1s forwards;
+  }
+
+  & > *:nth-child(2) {
+    animation: fadeInSlideUp 0.4s ease 0.2s forwards;
+  }
+
+  & > *:nth-child(3) {
+    animation: fadeInSlideUp 0.4s ease 0.3s forwards;
+  }
+
+  & > *:nth-child(4) {
+    animation: fadeInSlideUp 0.4s ease 0.4s forwards;
+  }
+}
+

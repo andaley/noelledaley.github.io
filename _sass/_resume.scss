@@ -1,11 +1,4 @@
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+@import "animations";
 
 .resume {
   h1, h3, h4, h5 {
@@ -14,11 +7,12 @@
 
   .summary, .body {
     opacity: 0;
-    transition: opacity 1s ease;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
   .summary {
-    animation: fadeIn 0.5s ease 0.25s forwards;
+    animation: fadeInSlideUp 0.4s ease 0.2s forwards;
     display: flex;
     padding: 48px 0px;
     width: 100%;
@@ -30,7 +24,7 @@
   }
 
   .body {
-    animation: fadeIn 0.5s ease 0.5s forwards; // Delay the second section by 1s
+    animation: fadeInSlideUp 0.4s ease 0.4s forwards;
     display: flex;
     gap: 60px;
     padding: 48px 0px;
