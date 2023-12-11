@@ -5,14 +5,14 @@
     margin-bottom: 8px;
   }
 
-  .summary, .body {
+  .summary, .experience > *, .skills {
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
   .summary {
-    animation: fadeInSlideUp 0.4s ease 0.2s forwards;
+    animation: fadeInSlideUp 0.4s ease 0.1s forwards;
     display: flex;
     padding: 48px 0px;
     width: 100%;
@@ -24,11 +24,24 @@
   }
 
   .body {
-    animation: fadeInSlideUp 0.4s ease 0.4s forwards;
     display: flex;
     gap: 60px;
     padding: 48px 0px;
-    border-top: 1px solid rgba(34, 34, 34, 0.1);
+    border-top: 1px solid rgba(34, 34, 34, 0.2);
+
+    .experience {
+        & > *:nth-child(1) {
+        animation: fadeInSlideUp 0.4s ease 0.3s forwards;
+        }
+
+        & > *:nth-child(2) {
+        animation: fadeInSlideUp 0.4s ease 0.4s forwards;
+        }
+
+        & > *:nth-child(3) {
+        animation: fadeInSlideUp 0.4s ease 0.5s forwards;
+      }
+    }
 
     p,
     li {
@@ -82,6 +95,14 @@
 
     .col-right {
       width: 100%; 
+
+      & > :nth-child(1) {
+        animation: fadeInSlideUp 0.4s ease 0.6s forwards;
+      }
+
+      & > :nth-child(2) {
+        animation: fadeInSlideUp 0.4s ease 0.7s forwards;
+      }
       
       .skills {
         margin-bottom: 20px;
