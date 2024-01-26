@@ -40,6 +40,8 @@ a:hover {
 .logo {
   font-family: $base-font-family;
   text-align: center;
+
+  h1 { font-weight: revert; }
 }
 
 .site-nav {
