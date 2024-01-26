@@ -60,7 +60,7 @@
       gap: $spacing-unit / 2;
 
       &--company {
-        width: 360px;
+        min-width: $spacing-unit * 2;
 
         h4 {
           font-size: 16px;
