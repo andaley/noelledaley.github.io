@@ -26,7 +26,7 @@
 
   .body {
     display: flex;
-    gap: 60px;
+    gap: $spacing-unit * 2.5;
     padding: $spacing-unit 0px;
     border-top: 1px solid rgba(34, 34, 34, 0.2);
 
@@ -53,6 +53,8 @@
     .section-header {
       font-size: 14px;
       font-weight: 600;
+      text-transform: uppercase;
+      font-family: $sans-serif-font-family;
     }
 
     .job {
@@ -74,9 +76,10 @@
       &--description {
         h3 {
           margin-top: 0;
-          font-size: 20px;
+          font-size: 24px;
           letter-spacing: -0.5px;
           line-height: 1.4em;
+          font-weight: 600;
         }
 
         .position:nth-child(1) {
@@ -91,8 +94,12 @@
 
     .education {
       display: flex;
-      gap: $spacing-unit;
+      gap: $spacing-unit / 2;
       animation-delay: 1s;
+
+      &--title {
+        min-width: $spacing-unit * 2;
+      }
 
       .schooling {
         display: flex;
