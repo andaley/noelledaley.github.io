@@ -4,7 +4,7 @@ title: About
 permalink: /
 ---
 
-Hello! I'm Noelle, a frontend software engineer residing in Portland, OR, where I spend my days riding bikes and leading a UI team at [HashiCorp](https://www.hashicorp.com/). I'm excited about thoughtful UX/UI design and get a thrill from the challenge of turning chaos into beautiful organization.
+Hello! I'm Adrianne, a frontend software engineer residing in Portland, OR, where I spend my days riding bikes and leading a UI team at [HashiCorp](https://www.hashicorp.com/). I'm excited about thoughtful UX/UI design and get a thrill from the challenge of turning chaos into beautiful organization.
 
 My approach to building and designing software is influenced by my varied experiences working in tech over the last decade. As a frontend staff engineer I currently focus on balancing product and design needs while building an organized, reliable UI and helping my teammates grow. I built relationships and advocated for better UIs and APIs in previous roles as a community manager. My undergraduate degree in sociology equipped me with research methods, systems thinking and a passion for understanding human behavior.  All of these experiences led me to a love of UX.
 

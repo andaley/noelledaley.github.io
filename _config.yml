@@ -3,12 +3,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Noelle Daley
+title: Adrianne Daley
 email: me@noelledaley.com
-description: Noelle Daley, Software Engineer
+description: Adrianne Daley, Frontend Software Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://noelledaley.github.io" # the base hostname & protocol for your site
-twitter_username: elnoelle
 github_username:  noelledaley
 
 # Build settings

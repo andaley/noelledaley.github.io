@@ -1,10 +1,15 @@
 ---
 ---
 @charset "utf-8";
+@import "animations";
 @import "colors";
 @import "typography";
+@import "layout";
 @import "footer";
 @import "minima";
+@import "about";
+@import "resume";
+
 
 body {
   background: $background-color;
@@ -15,7 +20,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1000px;
+  max-width: $laptop;
   margin: $spacing-unit auto;
   padding: 0 0%;
 }
@@ -35,6 +40,8 @@ a:hover {
 .logo {
   font-family: $base-font-family;
   text-align: center;
+
+  h1 { font-weight: revert; }
 }
 
 .site-nav {
@@ -66,9 +73,10 @@ a:hover {
 }
 
 .content {
-  margin-top: 50px;
-  padding: 0 10%;
+  margin-top: $spacing-unit;
+  padding: 0;
   line-height: $line-height;
+  @include fadeInAnimation;
 }
 
 .date {
@@ -76,18 +84,36 @@ a:hover {
   font-style: italic;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: $mobile-sm) {
+  .wrapper {
+    max-width: $mobile-sm;
+    margin:  0 ($spacing-unit * 0.75);
+  }
+
   .logo {
-    margin-top: 80px;
+    margin-top: $spacing-unit * 2;
   }
 
   .site-nav {
     left: 0;
   }
 
+  .content {
+    font-size: $base-font-size * 0.80;
+  }
+
   .me {
     display: block;
     float: none;
     margin: 0 auto 1em auto;
+    width: $mobile-sm - ($spacing-unit * 2);
+    height: auto;
+  }
+}
+
+@media screen and (max-width: $mobile-md) {
+  .wrapper {
+    max-width: $mobile-md;
+    margin:  0 ($spacing-unit * 0.75);
   }
 }
