@@ -187,8 +187,13 @@
       flex-direction: row;
       gap: $spacing-unit;
 
-      .skills:first-child {
-        margin-left: $spacing-unit * 2.5;
+      .skills {
+        display: flex;
+        gap: $spacing-unit * 1.5;
+
+        &--list {
+          column-count: 2;
+        }
       }
     }
   }
@@ -230,6 +235,11 @@
 
     .col-right {
       border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+
+      .skills {
+        flex-direction: column;
+        gap: 0;
+      }
     }
   }
 }
