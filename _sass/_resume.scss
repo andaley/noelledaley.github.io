@@ -2,11 +2,18 @@
   display: flex;
   flex-direction: column;
 
-  h1, h3, h4, h5 {
+  h1,
+  h3,
+  h4,
+  h5 {
     margin-bottom: 8px;
   }
 
-  .summary, .experience > *, .position, .skills, .education {
+  .summary,
+  .experience > *,
+  .position,
+  .skills,
+  .education {
     opacity: 0;
     transform: translateY(10px);
     @include fadeInAnimation;
@@ -31,15 +38,15 @@
     border-top: 1px solid rgba(34, 34, 34, 0.2);
 
     .experience {
-        & > *:nth-child(1) {
+      & > *:nth-child(1) {
         animation-delay: 0.4s;
-        }
+      }
 
-        & > *:nth-child(2) {
+      & > *:nth-child(2) {
         animation-delay: 0.4s;
-        }
+      }
 
-        & > *:nth-child(3) {
+      & > *:nth-child(3) {
         animation-delay: 0.8s;
       }
     }
@@ -94,24 +101,30 @@
     }
 
     .education {
-      display: flex;
-      gap: $spacing-unit / 2;
       animation-delay: 1s;
+
+      &.mobile {
+        display: none;
+      }
 
       &--title {
         min-width: $spacing-unit * 2;
       }
 
       .schooling {
-        display: flex;
-        gap: $spacing-unit / 2;
+        h5 {
+          margin-bottom: 0px;
+          font-size: 16px;
+        }
 
-        h5 {margin-bottom: 0px;}
+        p {
+          font-style: italic;
+        }
       }
     }
 
     .col-right {
-      width: 100%; 
+      width: 100%;
 
       & > :nth-child(1) {
         animation-delay: 0.6s;
@@ -120,7 +133,7 @@
       & > :nth-child(2) {
         animation-delay: 0.6s;
       }
-      
+
       .skills {
         margin-bottom: $spacing-unit * 0.75;
 
@@ -131,9 +144,51 @@
           padding: 0;
         }
 
-        ul + ul {
-          margin-top: 8px;
+        &.education.desktop {
+          ul + ul {
+            margin-top: $spacing-unit / 4;
+          }
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile-md) {
+    .body {
+      padding: ($spacing-unit / 2) 0;
+      flex-direction: column-reverse;
+      gap: $spacing-unit / 2;
+
+      .job {
+        border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+        margin-bottom: $spacing-unit / 2;
+      }
+
+      .education {
+        &.desktop {
+          display: none;
+        }
+        &.mobile {
+          display: flex;
+          gap: $spacing-unit / 2;
+
+          .schooling {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+          }
+        }
+      }
+    }
+
+    .col-right {
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-unit;
+
+      .skills:first-child {
+        margin-left: $spacing-unit * 2.5;
       }
     }
   }
@@ -156,12 +211,19 @@
       }
 
       .education {
-        flex-direction: column;
-        gap: 0;
-
-        .schooling {
+        &.desktop {
+          display: none;
+        }
+        &.mobile {
+          display: flex;
           flex-direction: column;
           gap: 0;
+
+          .schooling {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+          }
         }
       }
     }
@@ -169,25 +231,5 @@
     .col-right {
       border-bottom: 1px solid rgba(34, 34, 34, 0.2);
     }
-
-
   }
-
-    @media screen and (max-width: $mobile-md) {
-    .body {
-      padding: ($spacing-unit / 2) 0;
-      flex-direction: column-reverse;
-      gap: $spacing-unit / 2;
-    }
-
-    .col-right {
-      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
-      display: flex;
-      flex-direction: row;
-      gap: $spacing-unit;
-    }
-
-
-  }
-
 }
