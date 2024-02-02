@@ -84,16 +84,34 @@
   font-weight: 600;
 }
 
+// 1st role at a given company
 .job--description .position:nth-child(1) {
   animation-delay: 0.4s;
 }
 
+// 2nd role at a given company
 .job--description .position:nth-child(2) {
   animation-delay: 0.6s;
 }
 
-.education {
-  animation-delay: 1s;
+.resume .col-right {
+  width: 100%;
+}
+
+.resume .col-right .skills {
+  animation-delay: 0.6s;
+  margin-bottom: $spacing-unit * 0.75;
+}
+
+.resume .col-right ul,
+.resume .col-right li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.education.desktop {
+  animation-delay: 0.8s;
 }
 
 .education.mobile {
@@ -113,30 +131,7 @@
   font-style: italic;
 }
 
-.resume .col-right {
-  width: 100%;
-
-  & > :nth-child(1) {
-    animation-delay: 0.6s;
-  }
-
-  & > :nth-child(2) {
-    animation-delay: 0.6s;
-  }
-}
-
-.resume .col-right .skills {
-  margin-bottom: $spacing-unit * 0.75;
-}
-
-.resume .col-right .skills ul,
-.resume .col-right .skills li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.resume .col-right .education.desktop ul + ul {
+.education.desktop ul + ul {
   margin-top: $spacing-unit / 4;
 }
 
@@ -157,6 +152,7 @@
   }
 
   .resume .body .education.mobile {
+    animation-delay: 1s;
     display: flex;
     gap: $spacing-unit / 2;
   }
@@ -175,6 +171,7 @@
   }
 
   .resume .col-right .skills {
+    animation-delay: 0.4s;
     display: flex;
     gap: $spacing-unit * 1.5;
   }
@@ -207,6 +204,7 @@
   }
 
   .resume .body .education.mobile {
+    animation-delay: 1s;
     display: flex;
     flex-direction: column;
     gap: 0;
