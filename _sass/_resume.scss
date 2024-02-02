@@ -11,7 +11,7 @@
 
   .summary,
   .experience > *,
-  .position,
+  .role,
   .skills,
   .education {
     opacity: 0;
@@ -86,12 +86,12 @@
   }
 
   // 1st role at a given company
-  .job--description .position:nth-child(1) {
+  .job--description .role:nth-child(1) {
     animation-delay: 0.4s;
   }
 
   // 2nd role at a given company
-  .job--description .position:nth-child(2) {
+  .job--description .role:nth-child(2) {
     animation-delay: 0.6s;
   }
 
