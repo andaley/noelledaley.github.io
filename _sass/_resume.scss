@@ -18,211 +18,213 @@
     transform: translateY(10px);
     @include fadeInAnimation;
   }
-}
 
-.resume .summary {
-  animation-delay: 0.2s;
-  display: flex;
-  padding: $spacing-unit 0px;
-  width: 100%;
+  .summary {
+    animation-delay: 0.2s;
+    display: flex;
+    padding: $spacing-unit 0px;
+    width: 100%;
 
-  h1 {
-    letter-spacing: -0.5px;
-    line-height: 1.25em;
+    h1 {
+      letter-spacing: -0.5px;
+      line-height: 1.25em;
+      font-size: 24px;
+    }
+  }
+
+  .body {
+    display: flex;
+    gap: $spacing-unit * 2.5;
+    padding: $spacing-unit 0px;
+    border-top: 1px solid rgba(34, 34, 34, 0.2);
+  }
+
+  .body p,
+  .body li {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+
+  .body .section-header {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: $sans-serif-font-family;
+  }
+
+  .job {
+    display: flex;
+    gap: $spacing-unit / 2;
+  }
+
+  .job--company {
+    min-width: $spacing-unit * 2;
+  }
+
+  .job--company h4 {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
+  .job--description h3 {
+    margin-top: 0;
     font-size: 24px;
-  }
-}
-
-.resume .body {
-  display: flex;
-  gap: $spacing-unit * 2.5;
-  padding: $spacing-unit 0px;
-  border-top: 1px solid rgba(34, 34, 34, 0.2);
-}
-
-.resume .body .experience > *:nth-child(1),
-.resume .body .experience > *:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.resume .body .experience > *:nth-child(3) {
-  animation-delay: 0.8s;
-}
-
-.resume .body p,
-.resume .body li {
-  font-size: 16px;
-  line-height: 1.5em;
-}
-
-.resume .body .section-header {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: $sans-serif-font-family;
-}
-
-.job {
-  display: flex;
-  gap: $spacing-unit / 2;
-}
-
-.job--company {
-  min-width: $spacing-unit * 2;
-}
-
-.job--company h4 {
-  font-size: 16px;
-  margin-bottom: 0px;
-}
-
-.job--description h3 {
-  margin-top: 0;
-  font-size: 24px;
-  letter-spacing: -0.5px;
-  line-height: 1.4em;
-  font-weight: 600;
-}
-
-// 1st role at a given company
-.job--description .position:nth-child(1) {
-  animation-delay: 0.4s;
-}
-
-// 2nd role at a given company
-.job--description .position:nth-child(2) {
-  animation-delay: 0.6s;
-}
-
-.resume .col-right {
-  width: 100%;
-}
-
-.resume .col-right .skills {
-  animation-delay: 0.6s;
-  margin-bottom: $spacing-unit * 0.75;
-}
-
-.resume .col-right ul,
-.resume .col-right li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.education.desktop {
-  animation-delay: 0.8s;
-}
-
-.education.mobile {
-  display: none;
-}
-
-.education--title {
-  min-width: $spacing-unit * 2;
-}
-
-.education .schooling h5 {
-  margin-bottom: 0px;
-  font-size: 16px;
-}
-
-.education .schooling p {
-  font-style: italic;
-}
-
-.education.desktop ul + ul {
-  margin-top: $spacing-unit / 4;
-}
-
-@media screen and (max-width: $mobile-md) {
-  .resume .body {
-    padding: ($spacing-unit / 2) 0;
-    flex-direction: column-reverse;
-    gap: $spacing-unit / 2;
+    letter-spacing: -0.5px;
+    line-height: 1.4em;
+    font-weight: 600;
   }
 
-  .resume .body .job {
-    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
-    margin-bottom: $spacing-unit / 2;
-  }
-
-  .resume .body .education.desktop {
-    display: none;
-  }
-
-  .resume .body .education.mobile {
-    animation-delay: 1s;
-    display: flex;
-    gap: $spacing-unit / 2;
-  }
-
-  .resume .body .education.mobile .schooling {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .resume .col-right {
-    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
-    display: flex;
-    flex-direction: row;
-    gap: $spacing-unit;
-  }
-
-  .resume .col-right .skills {
+  // experience header & job 1
+  .experience > *:nth-child(1),
+  .experience > *:nth-child(2) {
     animation-delay: 0.4s;
-    display: flex;
-    gap: $spacing-unit * 1.5;
   }
 
-  .resume .col-right .skills--list {
-    column-count: 2;
-  }
-}
-
-@media screen and (max-width: $mobile-sm) {
-  .resume .summary {
-    padding: 0 0 ($spacing-unit / 2) 0;
+  // job 2
+  .experience > *:nth-child(3) {
+    animation-delay: 0.8s;
   }
 
-  .resume .body {
-    padding: ($spacing-unit / 2) 0;
-    flex-direction: column-reverse;
-    gap: $spacing-unit / 2;
+  // 1st role at a given company
+  .job--description .position:nth-child(1) {
+    animation-delay: 0.4s;
   }
 
-  .resume .body .job {
-    flex-direction: column;
-    gap: 0;
-    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
-    margin-bottom: $spacing-unit / 2;
+  // 2nd role at a given company
+  .job--description .position:nth-child(2) {
+    animation-delay: 0.6s;
   }
 
-  .resume .body .education.desktop {
+  .col-right {
+    width: 100%;
+  }
+
+  .col-right .skills {
+    animation-delay: 0.6s;
+    margin-bottom: $spacing-unit * 0.75;
+  }
+
+  .col-right ul,
+  .col-right li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .education.desktop {
+    animation-delay: 0.8s;
+  }
+
+  .education.mobile {
     display: none;
   }
 
-  .resume .body .education.mobile {
-    animation-delay: 1s;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .education--title {
+    min-width: $spacing-unit * 2;
   }
 
-  .resume .body .education.mobile .schooling {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .education .schooling h5 {
+    margin-bottom: 0px;
+    font-size: 16px;
   }
 
- .resume .col-right {
-    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+  .education .schooling p {
+    font-style: italic;
   }
 
-  .resume .col-right .skills {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .education.desktop ul + ul {
+    margin-top: $spacing-unit / 4;
+  }
+
+  @media screen and (max-width: $mobile-md) {
+    .body {
+      padding: ($spacing-unit / 2) 0;
+      flex-direction: column-reverse;
+      gap: $spacing-unit / 2;
+    }
+
+    .job {
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+      margin-bottom: $spacing-unit / 2;
+    }
+
+    .education.desktop {
+      display: none;
+    }
+
+    .education.mobile {
+      animation-delay: 1s;
+      display: flex;
+      gap: $spacing-unit / 2;
+    }
+
+    .education.mobile .schooling {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .col-right {
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-unit;
+    }
+
+    .col-right .skills {
+      animation-delay: 0.4s;
+      display: flex;
+      gap: $spacing-unit * 1.5;
+    }
+
+    .col-right .skills--list {
+      column-count: 2;
+    }
+  }
+
+  @media screen and (max-width: $mobile-sm) {
+    .summary {
+      padding: 0 0 ($spacing-unit / 2) 0;
+    }
+
+    .body {
+      padding: ($spacing-unit / 2) 0;
+      flex-direction: column-reverse;
+      gap: $spacing-unit / 2;
+    }
+
+    .job {
+      flex-direction: column;
+      gap: 0;
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+      margin-bottom: $spacing-unit / 2;
+    }
+
+    .education.desktop {
+      display: none;
+    }
+
+    .education.mobile {
+      animation-delay: 1s;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .education.mobile .schooling {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .col-right {
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+    }
+
+    .col-right .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }
