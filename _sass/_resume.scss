@@ -57,16 +57,16 @@
     gap: $spacing-unit / 2;
   }
 
-  .job--company {
+  .company {
     min-width: $spacing-unit * 2;
   }
 
-  .job--company h4 {
+  .company h4 {
     font-size: 16px;
     margin-bottom: 0px;
   }
 
-  .job--description h3 {
+  .job-description h3 {
     margin-top: 0;
     font-size: 24px;
     letter-spacing: -0.5px;
@@ -86,12 +86,12 @@
   }
 
   // 1st role at a given company
-  .job--description .role:nth-child(1) {
+  .job-description .role:nth-child(1) {
     animation-delay: 0.4s;
   }
 
   // 2nd role at a given company
-  .job--description .role:nth-child(2) {
+  .job-description .role:nth-child(2) {
     animation-delay: 0.6s;
   }
 
@@ -119,16 +119,16 @@
     display: none;
   }
 
-  .education--title {
+  .education.mobile > .section-header {
     min-width: $spacing-unit * 2;
   }
 
-  .education .schooling h5 {
+  .education .schools h5 {
     margin-bottom: 0px;
     font-size: 16px;
   }
 
-  .education .schooling p {
+  .education .schools p {
     font-style: italic;
   }
 
@@ -158,7 +158,7 @@
       gap: $spacing-unit / 2;
     }
 
-    .education.mobile .schooling {
+    .education.mobile .schools {
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -211,7 +211,7 @@
       gap: 0;
     }
 
-    .education.mobile .schooling {
+    .education.mobile .schools {
       display: flex;
       flex-direction: column;
       gap: 0;
