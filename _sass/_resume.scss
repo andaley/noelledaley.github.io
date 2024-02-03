@@ -2,11 +2,18 @@
   display: flex;
   flex-direction: column;
 
-  h1, h3, h4, h5 {
+  h1,
+  h3,
+  h4,
+  h5 {
     margin-bottom: 8px;
   }
 
-  .summary, .experience > *, .position, .skills, .education {
+  .summary,
+  .experience > *,
+  .role,
+  .skills,
+  .education {
     opacity: 0;
     transform: translateY(10px);
     @include fadeInAnimation;
@@ -21,6 +28,7 @@
     h1 {
       letter-spacing: -0.5px;
       line-height: 1.25em;
+      font-size: 24px;
     }
   }
 
@@ -29,107 +37,148 @@
     gap: $spacing-unit * 2.5;
     padding: $spacing-unit 0px;
     border-top: 1px solid rgba(34, 34, 34, 0.2);
+  }
 
-    .experience {
-        & > *:nth-child(1) {
-        animation-delay: 0.4s;
-        }
+  .body p,
+  .body li {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
 
-        & > *:nth-child(2) {
-        animation-delay: 0.4s;
-        }
+  .body .section-header {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: $sans-serif-font-family;
+  }
 
-        & > *:nth-child(3) {
-        animation-delay: 0.8s;
-      }
-    }
+  .job {
+    display: flex;
+    gap: $spacing-unit / 2;
+  }
 
-    p,
-    li {
-      font-size: 16px;
-      line-height: 1.5em;
-    }
+  .company {
+    min-width: $spacing-unit * 2;
+  }
 
-    .section-header {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-family: $sans-serif-font-family;
+  .company h4 {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
+  .job-description h3 {
+    margin-top: 0;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1.4em;
+    font-weight: 600;
+  }
+
+  // experience header & job 1
+  .experience > *:nth-child(1),
+  .experience > *:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  // job 2
+  .experience > *:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+
+  // 1st role at a given company
+  .job-description .role:nth-child(1) {
+    animation-delay: 0.4s;
+  }
+
+  // 2nd role at a given company
+  .job-description .role:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+
+  .col-right {
+    width: 100%;
+  }
+
+  .col-right .skills {
+    animation-delay: 0.6s;
+    margin-bottom: $spacing-unit * 0.75;
+  }
+
+  .col-right ul,
+  .col-right li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .education.desktop {
+    animation-delay: 0.8s;
+  }
+
+  .education.mobile {
+    display: none;
+  }
+
+  .education.mobile > .section-header {
+    min-width: $spacing-unit * 2;
+  }
+
+  .education .schools h5 {
+    margin-bottom: 0px;
+    font-size: 16px;
+  }
+
+  .education .schools p {
+    font-style: italic;
+  }
+
+  .education.desktop ul + ul {
+    margin-top: $spacing-unit / 4;
+  }
+
+  @media screen and (max-width: $mobile-md) {
+    .body {
+      padding: ($spacing-unit / 2) 0;
+      flex-direction: column-reverse;
+      gap: $spacing-unit / 2;
     }
 
     .job {
-      display: flex;
-      gap: $spacing-unit / 2;
-
-      &--company {
-        min-width: $spacing-unit * 2;
-
-        h4 {
-          font-size: 16px;
-        }
-
-        p {
-          font-size: 12px;
-        }
-      }
-
-      &--description {
-        h3 {
-          margin-top: 0;
-          font-size: 24px;
-          letter-spacing: -0.5px;
-          line-height: 1.4em;
-          font-weight: 600;
-        }
-
-        .position:nth-child(1) {
-          animation-delay: 0.4s;
-        }
-
-        .position:nth-child(2) {
-          animation-delay: 0.6s;
-        }
-      }
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+      margin-bottom: $spacing-unit / 2;
     }
 
-    .education {
+    .education.desktop {
+      display: none;
+    }
+
+    .education.mobile {
+      animation-delay: 1s;
       display: flex;
       gap: $spacing-unit / 2;
-      animation-delay: 1s;
+    }
 
-      &--title {
-        min-width: $spacing-unit * 2;
-      }
-
-      .schooling {
-        display: flex;
-        gap: $spacing-unit / 2;
-
-        h5 {margin-bottom: 0px;}
-      }
+    .education.mobile .schools {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
     .col-right {
-      width: 100%; 
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+      display: flex;
+      flex-direction: row;
+      gap: $spacing-unit;
+    }
 
-      & > :nth-child(1) {
-        animation-delay: 0.6s;
-      }
+    .col-right .skills {
+      animation-delay: 0.4s;
+      display: flex;
+      gap: $spacing-unit * 1.5;
+    }
 
-      & > :nth-child(2) {
-        animation-delay: 0.6s;
-      }
-      
-      .skills {
-        margin-bottom: 20px;
-
-        ul,
-        li {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-      }
+    .col-right .skills--list {
+      column-count: 2;
     }
   }
 
@@ -142,47 +191,57 @@
       padding: ($spacing-unit / 2) 0;
       flex-direction: column-reverse;
       gap: $spacing-unit / 2;
-
-      .job {
-        flex-direction: column;
-        gap: 0;
-        border-bottom: 1px solid rgba(34, 34, 34, 0.2);
-        margin-bottom: $spacing-unit / 2;
-      }
-
-      .education {
-        flex-direction: column;
-        gap: 0;
-
-        .schooling {
-          flex-direction: column;
-          gap: 0;
-        }
-      }
     }
 
-    .col-right {
+    .job {
+      flex-direction: column;
+      gap: 0;
       border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+      margin-bottom: $spacing-unit / 2;
     }
 
-
-  }
-
-    @media screen and (max-width: $mobile-md) {
-    .body {
-      padding: ($spacing-unit / 2) 0;
-      flex-direction: column-reverse;
-      gap: $spacing-unit / 2;
-    }
-
-    .col-right {
-      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+    .company {
       display: flex;
-      flex-direction: row;
-      gap: $spacing-unit;
+      justify-content: space-between;
+      font-family: $sans-serif-font-family;
+      margin-bottom: $spacing-unit / 4;
     }
 
+    .education.desktop {
+      display: none;
+    }
 
+    .education.mobile {
+      animation-delay: 1s;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .education.mobile .schools {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .col-right {
+      border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+    }
+
+    .col-right .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
+  @media screen and (max-width: $mobile-xs) {
+    .role h3 {
+      font-size: 22px;
+    }
+
+    .education .schools h5, .education .schools p {
+      font-size: 14px;
+    }
+  }
 }

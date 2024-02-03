@@ -47,8 +47,8 @@ a:hover {
 .site-nav {
   width: 100%;
   text-align: center;
-  font-family: $base-font-family;
-  font-weight: bold;
+  font-family: $sans-serif-font-family;
+  font-weight: 100;
   margin-bottom: 0.5em;
   background-color: inherit;
   border: none;
@@ -66,9 +66,9 @@ a:hover {
 }
 
 .me {
-  height: 400px;
+  height: 390px;
   border-radius: 5%;
-  margin: 0 1.75em 0 0;
+  margin: 0 1.25em 0 0;
   float: left;
 }
 
@@ -79,7 +79,7 @@ a:hover {
   @include fadeInAnimation;
 }
 
-.date {
+time {
   font-size: $small-font-size;
   font-style: italic;
 }
