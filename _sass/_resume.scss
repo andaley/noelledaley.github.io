@@ -200,6 +200,13 @@
       margin-bottom: $spacing-unit / 2;
     }
 
+    .company {
+      display: flex;
+      justify-content: space-between;
+      font-family: $sans-serif-font-family;
+      margin-bottom: $spacing-unit / 4;
+    }
+
     .education.desktop {
       display: none;
     }
@@ -225,6 +232,16 @@
       display: flex;
       flex-direction: column;
       gap: 0;
+    }
+  }
+
+  @media screen and (max-width: $mobile-xs) {
+    .role h3 {
+      font-size: 22px;
+    }
+
+    .education .schools h5, .education .schools p {
+      font-size: 14px;
     }
   }
 }
