@@ -216,6 +216,12 @@
       justify-content: space-between;
       font-family: $sans-serif-font-family;
       margin-bottom: $spacing-unit / 4;
+      flex-wrap: wrap;
+    }
+
+    .company .tech-stack {
+      width: 100%;
+      margin-top: 4px;
     }
 
     .education.desktop {
