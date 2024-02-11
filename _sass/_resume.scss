@@ -39,8 +39,7 @@
     border-top: 1px solid rgba(34, 34, 34, 0.2);
   }
 
-  .body p,
-  .body li {
+  .body p {
     font-size: 16px;
     line-height: 1.5em;
   }
@@ -67,7 +66,7 @@
     margin-bottom: 0px;
   }
 
-  .company .tech-stack span {
+  .tag {
     font-family: $sans-serif-font-family;
     font-size: $small-font-size;
     color: $text-color-light;
@@ -115,13 +114,6 @@
     margin-bottom: $spacing-unit * 0.75;
   }
 
-  .col-right ul,
-  .col-right li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
   .education.desktop {
     animation-delay: 0.8s;
   }
@@ -130,21 +122,16 @@
     display: none;
   }
 
-  .education.mobile > .section-header {
-    min-width: $spacing-unit * 2;
-  }
-
   .education .schools h5 {
+    font-size: 13px;
+    line-height: 1.5em;
     margin-bottom: 0px;
-    font-size: 16px;
   }
 
   .education .schools p {
     font-style: italic;
-  }
-
-  .education.desktop ul + ul {
-    margin-top: $spacing-unit / 4;
+    font-size: 13px;
+    margin-bottom: 12px;
   }
 
   @media screen and (max-width: $mobile-md) {
@@ -169,6 +156,10 @@
       gap: $spacing-unit / 2;
     }
 
+    .education.mobile > .section-header {
+      min-width: $spacing-unit * 2;
+    }
+
     .education.mobile .schools {
       display: flex;
       flex-direction: column;
@@ -186,10 +177,6 @@
       animation-delay: 0.4s;
       display: flex;
       gap: $spacing-unit * 1.5;
-    }
-
-    .col-right .skills--list {
-      column-count: 2;
     }
   }
 
@@ -255,11 +242,6 @@
   @media screen and (max-width: $mobile-xs) {
     .role h3 {
       font-size: 22px;
-    }
-
-    .education .schools h5,
-    .education .schools p {
-      font-size: 14px;
     }
   }
 }
