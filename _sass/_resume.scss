@@ -63,7 +63,18 @@
 
   .company h4 {
     font-size: 16px;
+    font-weight: 600;
     margin-bottom: 0px;
+  }
+
+  .company .tech-stack span {
+    font-family: $sans-serif-font-family;
+    font-size: $small-font-size;
+    color: $text-color-light;
+    margin-bottom: 4px;
+    border-radius: 12px;
+    border: 1px solid $border-color;
+    padding: 6px;
   }
 
   .job-description h3 {
@@ -240,7 +251,8 @@
       font-size: 22px;
     }
 
-    .education .schools h5, .education .schools p {
+    .education .schools h5,
+    .education .schools p {
       font-size: 14px;
     }
   }
