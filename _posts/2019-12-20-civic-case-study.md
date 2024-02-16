@@ -31,4 +31,4 @@ Build a new landing page that helps users understand what CIVIC is and how to ge
 
 <img src="../../../../img/civic-ideas-feedback.jpg" alt="civic wireframes with feedback">
 
-<a href="mailto:me@noelledaley.com">Get in touch</a> to read the full case study and learn more about my work.
+<a href="mailto:me@adriannedaley.com">Get in touch</a> to read the full case study and learn more about my work.
