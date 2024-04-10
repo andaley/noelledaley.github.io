@@ -1,10 +1,9 @@
 footer {
   text-align: center;
   padding: 1em 0;
-  font-size: 1.2em;
-}
+  font-size: 0.8em;
 
-.social-icons {
+  .social-icons {
   overflow: hidden;
   padding: 0;
   list-style: none;
@@ -17,5 +16,12 @@ footer {
 
   a {
     border: none;
+  }
+}
+
+  .copyright {
+    font-family: $sans-serif-font-family;
+    font-weight: 100;
+    margin-bottom: 8px;
   }
 }
