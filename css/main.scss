@@ -62,6 +62,7 @@ a:hover {
   li {
     display: inline-block;
     margin-right: 1em;
+    @include increaseSizeOnHover(1.1);
   }
 }
 

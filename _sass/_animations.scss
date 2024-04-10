@@ -13,3 +13,11 @@
 @mixin fadeInAnimation {
   animation: fadeInSlideUp 0.4s ease forwards;
 }
+
+@mixin increaseSizeOnHover($scaleFactor: 1.4) {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale($scaleFactor);
+  }
+}
