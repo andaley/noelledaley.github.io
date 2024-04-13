@@ -21,14 +21,20 @@
 
   .summary {
     animation-delay: 0.2s;
-    display: flex;
-    padding: $spacing-unit 0px;
+    padding: $spacing-unit 0px ;
     width: 100%;
 
     h1 {
       letter-spacing: -0.5px;
       line-height: 1.25em;
       font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 20px;
+      letter-spacing: -0.5px;
     }
   }
 
