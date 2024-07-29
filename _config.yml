@@ -8,7 +8,7 @@ email: me@adriannedaley.com
 description: Adrianne Daley, Frontend Software Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://noelledaley.github.io" # the base hostname & protocol for your site
-github_username:  noelledaley
+github_username:  andaley
 
 # Build settings
 markdown: kramdown
