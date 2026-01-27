@@ -21,7 +21,7 @@
 
   .summary {
     animation-delay: 0.2s;
-    padding: $spacing-unit 0px ;
+    padding: ($spacing-unit / 2) 0px;
     width: 100%;
 
     h1 {
@@ -41,7 +41,7 @@
   .body {
     display: flex;
     gap: $spacing-unit * 2.5;
-    padding: $spacing-unit 0px;
+    padding: ($spacing-unit / 2) 0px;
     border-top: 1px solid rgba(34, 34, 34, 0.2);
   }
 
@@ -55,6 +55,12 @@
     font-weight: 600;
     text-transform: uppercase;
     font-family: $sans-serif-font-family;
+  }
+
+  .jobs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit / 2;
   }
 
   .job {
