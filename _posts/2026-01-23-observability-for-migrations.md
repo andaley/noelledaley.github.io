@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Observability tools to track migrations"
+title:  "Using Observability Tools to Track Frontend Migrations"
 date:   2026-01-23 10:00:00 -0800
 categories: blog
 ---
