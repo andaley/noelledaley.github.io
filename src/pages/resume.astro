@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import source from '../../_layouts/resume.html?raw';
+const content = source.replace(/^---[\s\S]*?---\s*/, '');
+---
+<BaseLayout title="Resume" interior>
+  <div class="resume-content" set:html={content} />
+</BaseLayout>

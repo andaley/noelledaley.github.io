@@ -6,7 +6,7 @@ categories: talks
 ---
 
 
-<iframe src="https://player.vimeo.com/video/344515972" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe title="What Colocated Teams Can Learn from Remote Teams: DevOps Day Zurich talk" src="https://player.vimeo.com/video/344515972" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 This was a talk based on my [earlier research](https://medium.com/@elnoelle/what-colocated-teams-can-learn-from-remote-teams-f48bb4a708d1) on what makes remote work _work_. 
 
@@ -17,7 +17,7 @@ In today’s distributed world it is increasingly important to embrace some form
 <script async class="speakerdeck-embed" data-id="2c3d32afc2aa405d87cc1550e9d62b77" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
 
-### Related Links
+## Related Links
 [Atlassian DACI Playbook](https://www.atlassian.com/team-playbook/plays/daci)
 [Is group chat making you sweat?](https://m.signalvnoise.com/is-group-chat-making-you-sweat/) - Jason Fried
 [“Bursty” Communication Can Help Remote Teams Thrive Behavioral Scientist](https://behavioralscientist.org/bursty-communication-can-help-remote-teams-thrive/) - Christoph Riedl and Anita Williams Woolley

@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { writingUrl } from '../lib/writing';
+
+const writing = await getCollection('writing');
+const byId = new Map(writing.map((entry) => [entry.id, entry]));
+const selected = [
+  ['2019-12-20-civic-case-study', 'Research and design for a public-data platform landing page.'],
+  ['2019-10-19-ux-fundamentals-form-design', 'An interaction design study in simplifying a complex form.'],
+  ['2025-07-27-tracking-design-system-deviations', 'A conversation about treating design system deviations as signals.'],
+] as const;
+const recent = writing.toSorted((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+---
+<BaseLayout>
+  <section class="hero">
+    <h1>Thoughtful systems for complex work.</h1>
+    <p>Hello! I'm Adrianne (they/them), a software engineer residing in Portland, OR, where I spend my days riding bikes and leading a platform UI and design systems team at <a href="https://www.honeycomb.io/">Honeycomb</a>. I specialize in crafting thoughtful systems and turning complexity into beautifully organized, tested, and maintainable code.</p>
+    <a href="mailto:me@adriannedaley.com">Get in touch</a>
+  </section>
+  <section class="section" aria-labelledby="work">
+    <h2 class="section-title" id="work">Selected work and talks</h2>
+    <ul class="card-list" role="list">
+      {selected.map(([id, description]) => {
+        const entry = byId.get(id)!;
+        return <li><h3><a href={writingUrl(entry)}>{entry.data.title}</a></h3><p class="description">{description}</p></li>;
+      })}
+    </ul>
+  </section>
+  <section class="section" aria-labelledby="recent-writing">
+    <h2 class="section-title" id="recent-writing">Recent writing</h2>
+    <ul class="writing-list" role="list">
+      {recent.map((entry) => <li><a href={writingUrl(entry)}>{entry.data.title}</a><time datetime={entry.data.date.toISOString()}>{entry.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></li>)}
+    </ul>
+    <a href="/writing/">View all writing</a>
+  </section>
+</BaseLayout>

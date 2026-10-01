@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  interior?: boolean;
+}
+
+const {
+  title = 'Adrianne Daley',
+  description = 'Adrianne Daley, frontend software engineer specializing in design systems.',
+  interior = false,
+} = Astro.props;
+const pageTitle = title === 'Adrianne Daley' ? title : `${title} | Adrianne Daley`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Adrianne Daley" href="/feed.xml" />
+    <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <div class="shell">
+      {interior ? (
+        <nav class="toolbar" aria-label="Page">
+          <a class="pill" href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5 3 12l7 7M3 12h17" /></svg>Home</a>
+          <button class="pill copy-link" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 13 4-4m-6 6-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 2 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0" /></svg>Copy link</button>
+          <span class="copy-status" role="status"></span>
+          <input class="copy-url" aria-label="Page link" readonly hidden />
+        </nav>
+      ) : (
+        <header class="site-header">
+          <a class="name" href="/">Adrianne Daley</a>
+          <nav aria-label="Primary">
+            <a href="/#work">Work</a><a href="/writing/">Writing</a><a href="/about/">About</a>
+          </nav>
+        </header>
+      )}
+      <main id="content" tabindex="-1"><slot /></main>
+      <footer><p>© {new Date().getFullYear()} Adrianne Daley</p><a href="/feed.xml">RSS</a></footer>
+    </div>
+    {interior && <script>
+      const button = document.querySelector<HTMLButtonElement>('.copy-link');
+      const status = document.querySelector('.copy-status');
+      const copyUrl = document.querySelector<HTMLInputElement>('.copy-url');
+      if (button) button.hidden = false;
+      button?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(location.href);
+          if (copyUrl) copyUrl.hidden = true;
+          if (status) status.textContent = 'Link copied.';
+        } catch {
+          if (copyUrl) {
+            copyUrl.value = location.href;
+            copyUrl.hidden = false;
+            copyUrl.focus();
+            copyUrl.select();
+          }
+          if (status) status.textContent = 'Automatic copying is unavailable. Copy the selected link.';
+        }
+      });
+    </script>}
+  </body>
+</html>

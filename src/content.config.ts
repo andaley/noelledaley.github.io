@@ -1,0 +1,14 @@
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
+import { glob } from 'astro/loaders';
+
+const writing = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './_posts' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    categories: z.string(),
+  }),
+});
+
+export const collections = { writing };

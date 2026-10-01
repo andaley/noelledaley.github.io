@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { writingSlug } from '../../lib/writing';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('writing');
+  return entries.map((entry) => ({ params: { slug: writingSlug(entry) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const date = entry.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<BaseLayout title={entry.data.title} interior>
+  <article class="article prose">
+    <p class="eyebrow">{entry.data.categories}</p>
+    <h1>{entry.data.title}</h1>
+    <p class="meta"><time datetime={entry.data.date.toISOString()}>{date}</time></p>
+    <Content />
+  </article>
+</BaseLayout>
