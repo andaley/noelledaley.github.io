@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { postUrl } from '../../lib/posts';
+const posts = (await getCollection('posts')).toSorted((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<BaseLayout title="Posts" interior>
+  <article class="article">
+    <p class="eyebrow">Posts and talks</p>
+    <h1>Ideas about software and people.</h1>
+    <p>I spend a lot of time thinking about tech industry culture, empathy, design, and career development. Occasionally I write and speak about these topics. You can can check out my thoughts and view samples of my work below.</p>
+    <ul class="posts-list" role="list">
+      {posts.map((entry) => <li><a href={postUrl(entry)}>{entry.data.title}</a><time datetime={entry.data.date.toISOString()}>{entry.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time></li>)}
+    </ul>
+  </article>
+</BaseLayout>

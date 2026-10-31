@@ -31,13 +31,13 @@ p { text-wrap: pretty; }
 .section { margin-block-start: 3.5rem; }
 .section-title, .eyebrow, time, .meta, .description, footer { font-family: var(--sans); color: var(--secondary); }
 .section-title, .eyebrow { font-size: 1rem; font-weight: 400; }
-.card-list, .writing-list { list-style: none; margin: 0; padding: 0; }
+.card-list, .posts-list { list-style: none; margin: 0; padding: 0; }
 .card-list { display: grid; gap: 1.5rem; }
 .card-list h3 { margin-block-end: .2rem; font-size: 1.3rem; font-weight: 400; }
 .description { margin: 0; font-size: 1rem; line-height: 1.6; }
-.writing-list li { margin-block: 1.25rem; }
-.writing-list a { font-size: 1.25rem; }
-.writing-list time { display: block; font-size: .9rem; }
+.posts-list li { margin-block: 1.25rem; }
+.posts-list a { font-size: 1.25rem; }
+.posts-list time { display: block; font-size: .9rem; }
 .toolbar { margin-block-end: 4.75rem; flex-wrap: wrap; }
 .pill { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-block-size: 2.75rem; padding: .45rem 1rem; background: var(--surface); border: 0; border-radius: 2rem; font-size: 1.0625rem; text-decoration: none; cursor: pointer; }
 .pill:hover { background: #e7e7e4; }

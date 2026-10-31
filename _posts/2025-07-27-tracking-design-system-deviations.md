@@ -13,4 +13,4 @@ Here's a video recap and the [collaborative Figjam](https://bit.ly/454htOw) from
 
 ___
 
-Curious about the technical implementation of the system I set up to track design system usage at Honeycomb? You can learn more about it in my post: [Using Observability Tools to Track Frontend Migrations](/writing/observability-for-migrations/).
+Curious about the technical implementation of the system I set up to track design system usage at Honeycomb? You can learn more about it in my post: [Using Observability Tools to Track Frontend Migrations](/posts/observability-for-migrations/).

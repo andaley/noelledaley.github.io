@@ -9,12 +9,15 @@ const posts = globSync('_posts/*.{md,mdx}');
 
 test('every post has a static page, index entry, and feed entry', () => {
   assert.ok(posts.length > 0);
-  const index = readFileSync('dist/writing/index.html', 'utf8');
+  assert.ok(existsSync('dist/posts/index.html'), 'Posts index must exist');
+  const index = readFileSync('dist/posts/index.html', 'utf8');
+  assert.match(index, /<title>Posts \| Adrianne Daley<\/title>/);
+  assert.match(readFileSync('dist/index.html', 'utf8'), /href="\/posts\/">Posts<\/a>/);
   const feed = readFileSync('dist/feed.xml', 'utf8');
   assert.equal((feed.match(/<item>/g) ?? []).length, posts.length);
   for (const post of posts) {
     const slug = post.split(sep).at(-1).replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.mdx?$/, '');
-    const url = `/writing/${slug}/`;
+    const url = `/posts/${slug}/`;
     assert.ok(existsSync(`dist${url}index.html`), post);
     assert.ok(index.includes(`href="${url}"`), post);
     assert.ok(feed.includes(`<link>${origin}${url}</link>`), post);
@@ -22,7 +25,7 @@ test('every post has a static page, index entry, and feed entry', () => {
 });
 
 test('pages contain static content, canonical metadata, and a focusable skip target', () => {
-  assert.ok(pages.length >= posts.length + 5);
+  assert.ok(pages.length >= posts.length + 4);
   for (const file of pages) {
     const html = readFileSync(file, 'utf8');
     assert.match(html, /<html lang="en">/, file);
