@@ -10,10 +10,13 @@ const posts = globSync('_posts/*.{md,mdx}');
 
 test('every post has a static page, index entry, and feed entry', () => {
   assert.ok(posts.length > 0);
-  assert.ok(existsSync('dist/posts/index.html'), 'Posts index must exist');
+  assert.ok(existsSync('dist/posts/index.html'), 'Blog index must exist');
   const index = readFileSync('dist/posts/index.html', 'utf8');
-  assert.match(index, /<title>Posts \| Adrianne Daley<\/title>/);
-  assert.match(readFileSync('dist/index.html', 'utf8'), /href="\/posts\/">Posts<\/a>/);
+  assert.match(index, /<title>Blog \| Adrianne Daley<\/title>/);
+  const home = readFileSync('dist/index.html', 'utf8');
+  assert.match(home, /href="\/posts\/">Blog<\/a>/);
+  assert.match(home, /href="\/about\/">About<\/a>/);
+  assert.doesNotMatch(home, /Selected work and talks|href="\/#work"/);
   const feed = readFileSync('dist/feed.xml', 'utf8');
   assert.equal((feed.match(/<item>/g) ?? []).length, posts.length);
   for (const post of posts) {

@@ -25,16 +25,13 @@ h1, h2, h3, p { margin-block-start: 0; }
 h1 { font-size: clamp(2.6rem, 1.7rem + 3.4vw, 3.75rem); font-weight: 600; line-height: 1.09; letter-spacing: -.045em; text-wrap: balance; }
 h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
-.hero { padding-block: 5.25rem 4rem; }
+.hero { padding-block-start: 5.25rem; }
 .hero h1 { max-inline-size: 18ch; }
 .hero p { max-inline-size: 54ch; }
 .section { margin-block-start: 3.5rem; }
-.section-title, .eyebrow, time, .meta, .description, footer { font-family: var(--sans); color: var(--secondary); }
+.section-title, .eyebrow, time, .meta, footer { font-family: var(--sans); color: var(--secondary); }
 .section-title, .eyebrow { font-size: 1rem; font-weight: 400; }
-.card-list, .posts-list { list-style: none; margin: 0; padding: 0; }
-.card-list { display: grid; gap: 1.5rem; }
-.card-list h3 { margin-block-end: .2rem; font-size: 1.3rem; font-weight: 400; }
-.description { margin: 0; font-size: 1rem; line-height: 1.6; }
+.posts-list { list-style: none; margin: 0; padding: 0; }
 .posts-list li { margin-block: 1.25rem; }
 .posts-list a { font-size: 1.25rem; }
 .posts-list time { display: block; font-size: .9rem; }
@@ -65,7 +62,7 @@ footer { display: flex; justify-content: space-between; align-items: baseline; g
   .shell { padding: 1.75rem 1.5rem; }
   .site-header { flex-wrap: wrap; row-gap: .5rem; }
   .site-header nav { gap: 1.25rem; }
-  .hero { padding-block: 3.5rem 3rem; }
+  .hero { padding-block-start: 3.5rem; }
   .toolbar { margin-block-end: 3.5rem; }
   .resume-content .body { display: block; }
   .resume-content .desktop { display: none; }
