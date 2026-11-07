@@ -12,12 +12,12 @@ To accomplish this I tried my hand at redesigning a complex app used in real lif
 
 Here’s the initial wireframe:
 
-<img src="../../../../img/request-access-problem.png" alt="request access form problem">
+<img src="../../../../img/request-access-problem.png" width="1024" height="1730" alt="request access form problem">
 
 And my solution wireframe with annotations:
-<img src="../../../../img/request-access-solution.jpg" alt="request access form solution">
+<img src="../../../../img/request-access-solution.jpg" width="2048" height="1660" alt="request access form solution">
 
-<img src="../../../../img/request-access-solution-2.jpg" alt="request access form solution with address">
+<img src="../../../../img/request-access-solution-2.jpg" width="2048" height="1660" alt="request access form solution with address">
 
 Along with my solution as a [Sketch prototype](https://sketch.cloud/s/nxARV/a/noGxl0/play).
 

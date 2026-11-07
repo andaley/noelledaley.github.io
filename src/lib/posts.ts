@@ -7,3 +7,9 @@ export function postSlug(entry: CollectionEntry<'posts'>) {
 export function postUrl(entry: CollectionEntry<'posts'>) {
   return `/posts/${postSlug(entry)}/`;
 }
+
+export function formatPostDate(date: Date) {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles',
+  });
+}

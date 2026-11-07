@@ -14,8 +14,9 @@ In today’s distributed world it is increasingly important to embrace some form
 
 ## Slides
 
-<script async class="speakerdeck-embed" data-id="2c3d32afc2aa405d87cc1550e9d62b77" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="2c3d32afc2aa405d87cc1550e9d62b77" data-name="What Colocated Teams Can Learn from Remote Teams slides" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
+[View the remote teams slides on Speaker Deck](https://speakerdeck.com/noelledaley/what-colocated-teams-can-learn-from-remote-teams).
 
 ## Related Links
 [Atlassian DACI Playbook](https://www.atlassian.com/team-playbook/plays/daci)

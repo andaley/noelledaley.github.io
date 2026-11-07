@@ -114,11 +114,11 @@ Another notable gotcha here: Static analysis of a large codebase generates thous
 
 Now for the payoff: turning this data into actionable insights. Once the data landed in Honeycomb, I set up queries to track deprecated component usage along with design system component usage:
 
-<img src="/img/deprecated-components.png" alt="Chart showing deprecated component usage over time" />
+<img src="/img/deprecated-components.png" width="3680" height="2382" alt="Chart showing deprecated component usage over time" />
 
 Next, I assembled saved queries into a board where I could view everything at a glance:
 
-<img src="/img/lattice-adoption-dashboard.png" alt="Dashboard of design system adoption and deprecated component usage" />
+<img src="/img/lattice-adoption-dashboard.png" width="3680" height="2382" alt="Dashboard of design system adoption and deprecated component usage" />
 
 We've been running this scan daily in CI for the last year. The data and dashboard have become a regular part of our team's roadmap planning, leveraging it to identify which product areas need migration support or which components have key feature gaps preventing teams from making progress. It's also become a one-stop shop for teams to check in on their progress without us stepping in.
 

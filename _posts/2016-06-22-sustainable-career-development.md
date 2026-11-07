@@ -5,7 +5,9 @@ date:   2016-06-22 17:28:11 -0700
 categories: talks
 ---
 
-<script async class="speakerdeck-embed" data-id="6e4e21f385284e1d9cc57f48b4ec5d94" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="6e4e21f385284e1d9cc57f48b4ec5d94" data-name="Sustainable Career Development slides" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+[View the Sustainable Career Development slides on Speaker Deck](https://speakerdeck.com/noelledaley/sustainable-career-development-advancing-while-still-having-free-time).
 
 I gave this talk initially at [Open Source Bridge 2016](http://opensourcebridge.org/users/1997) and later presented a condensed version at [DonutJS](https://donutjs.club/past-speakers/#august-2016). The talk examines the pressure in the tech industry to participate in work-related extracurriculars like side projects and meetups. I analyze where these expectations come from, what they're actually getting at, and talk about ideas for progressing in our careers without losing sight of the things in life that make us happy outside of work.
 

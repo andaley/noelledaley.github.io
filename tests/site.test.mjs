@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, globSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import test from 'node:test';
+import sharp from 'sharp';
 
 const origin = 'https://adriannedaley.com';
 const pages = globSync('dist/**/*.html');
@@ -63,4 +64,42 @@ test('static hosting files and licensed font are included', () => {
   assert.ok(existsSync('dist/sitemap-index.xml'));
   assert.ok(existsSync('dist/fonts/source-serif-4-latin.woff2'));
   assert.match(readFileSync('dist/fonts/font-license.txt', 'utf8'), /SIL OPEN FONT LICENSE/);
+});
+
+test('article images reserve their intrinsic dimensions', async () => {
+  for (const file of pages) {
+    const pageUrl = new URL('/' + relative('dist', file).split(sep).join('/'), origin);
+    const html = readFileSync(file, 'utf8');
+    for (const [image] of html.matchAll(/<img\b[^>]*>/g)) {
+      const src = image.match(/\bsrc="([^"]+)"/)[1];
+      const { width, height } = await sharp(join('dist', new URL(src, pageUrl).pathname)).metadata();
+      assert.equal(Number(image.match(/\bwidth="(\d+)"/)?.[1]), width, `${file}: ${src} width`);
+      assert.equal(Number(image.match(/\bheight="(\d+)"/)?.[1]), height, `${file}: ${src} height`);
+    }
+  }
+});
+
+test('slide decks have descriptive names and permanent links', () => {
+  for (const [slug, deck] of [
+    ['sustainable-career-development', 'sustainable-career-development-advancing-while-still-having-free-time'],
+    ['colocated-teams-devops-day-zurich', 'what-colocated-teams-can-learn-from-remote-teams'],
+  ]) {
+    const html = readFileSync(`dist/posts/${slug}/index.html`, 'utf8');
+    assert.match(html, /(?:data-name|title)="[^"]+ slides"/, `${slug}: descriptive frame name`);
+    assert.ok(html.includes(`href="https://speakerdeck.com/noelledaley/${deck}"`), `${slug}: direct slides link`);
+  }
+});
+
+test('publication dates use Pacific time without changing timestamps', () => {
+  const index = readFileSync('dist/posts/index.html', 'utf8');
+  for (const [slug, timestamp, date] of [
+    ['remote-work', '2018-06-09T00:28:11.000Z', 'June 8, 2018'],
+    ['sustainable-career-development', '2016-06-23T00:28:11.000Z', 'June 22, 2016'],
+    ['observability-for-migrations', '2026-01-23T18:00:00.000Z', 'January 23, 2026'],
+  ]) {
+    const time = `<time datetime="${timestamp}">${date}</time>`;
+    const html = readFileSync(`dist/posts/${slug}/index.html`, 'utf8');
+    assert.equal(html.match(/<time\b[^>]*>[^<]*<\/time>/)?.[0], time, `${slug}: ${date}`);
+    assert.ok(index.includes(time), `Posts index: ${date}`);
+  }
 });
