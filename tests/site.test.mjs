@@ -6,7 +6,7 @@ import sharp from 'sharp';
 
 const origin = 'https://adriannedaley.com';
 const pages = globSync('dist/**/*.html');
-const posts = globSync('_posts/*.{md,mdx}');
+const posts = globSync('src/content/posts/*.{md,mdx}');
 
 test('every post has a static page, index entry, and feed entry', () => {
   assert.ok(posts.length > 0);
